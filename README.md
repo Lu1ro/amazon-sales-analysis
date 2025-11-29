@@ -1,84 +1,68 @@
-\# 📊 Amazon Product Sales Analysis
+# Amazon Sales Strategy Analysis 📊
 
+## Project Overview
+In the competitive e-commerce landscape, pricing strategies directly impact sales volume and customer satisfaction. This project analyzes a dataset of over **1,400 Amazon products** to determine the relationship between discounting, pricing, and customer ratings.
 
+**The goal:** To identify whether "deep discounting" is a viable strategy for maintaining high customer satisfaction and to pinpoint the most competitive product categories.
 
-!\[Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+---
 
-!\[Libraries](https://img.shields.io/badge/Library-Pandas%20%7C%20Seaborn-green)
+## 🔍 Key Business Insights
 
-!\[Status](https://img.shields.io/badge/Status-Completed-success)
+### 1. The "High-Discount" Illusion
+* **Observation:** The average discount across the inventory is **47.6%**, with many products discounted over 50%.
+* **Insight:** Sellers use a "High Markup, High Discount" psychological pricing strategy to make deals appear more attractive.
 
+### 2. Price vs. Satisfaction Anomaly
+* **Observation:** There is **zero correlation** between the price of a product and its user rating.
+* **Insight:** Customers do not rate expensive products higher. Value perception is driven by product utility, not the price tag.
 
+### 3. Review Reliability Warning
+* **Observation:** The average rating is **4.1/5.0**, which is statistically skewed.
+* **Insight:** This indicates a strong "Survivorship Bias" (poorly rated products are removed) or potential review curation.
 
-\## 📌 Executive Summary
+---
 
-This project analyzes a dataset of over 1,400 Amazon products to understand \*\*pricing strategies\*\*, \*\*discount effectiveness\*\*, and \*\*customer sentiment\*\*. 
+## 📊 Visual Analysis
 
+### Category Dominance
+*The inventory is heavily skewed towards Electronics and Home/Kitchen appliances, making these the most competitive niches.*
+![Top Categories](images/1_top_categories.png)
 
+### Discount Distribution
+*Most products offer a discount between 30% and 60%, creating a standard expectation for customers.*
+![Discount Distribution](images/2_discount_distribution.png)
 
-\*\*Key Business Question:\*\* \*Do higher discounts actually lead to better customer ratings or higher sales volume?\*
+### Price Elasticity & Ratings
+*As shown below, high prices do not guarantee high ratings. Quality control is more critical than premium pricing.*
+![Price vs Rating](images/3_price_vs_rating.png)
 
+---
 
+## 💡 Recommendations
+Based on the data, the following strategies are recommended for new sellers:
+1.  **Avoid Price Wars:** Since price doesn't drive ratings, focus on product quality and detailed descriptions rather than just lowering the price.
+2.  **Entry Strategy:** "Electronics" is oversaturated. Niche categories (like Office Products or Toys) may offer better visibility for new entrants.
+3.  **Discounting:** A discount of **30-50%** is the industry standard. Anything less may be perceived as "expensive" by the algorithm-conditioned customer.
 
-\## 🔍 Key Findings \& Insights
+---
 
-Based on the data analysis, the following trends were identified:
+## 🛠️ Technical Details
+* **Language:** Python 3.10+
+* **Libraries:** Pandas (Data Manipulation), Seaborn/Matplotlib (Visualization)
+* **Data Processing:** * Cleaned currency symbols (`₹`) and percentage formatting.
+    * Handled missing values to ensure statistical significance.
+    * Log-scaled pricing data for accurate visualization.
 
+## 🚀 Getting Started
+To replicate this analysis:
 
-
-1\.  \*\*Deep Discount Strategy:\*\* The average discount across products is \*\*47.6%\*\*. A significant portion of inventory uses a "High Markup, High Discount" pricing model.
-
-2\.  \*\*Rating Inflation:\*\* The average product rating is \*\*4.1/5.0\*\*, which is unusually high. This suggests a survivorship bias (only good products stay listed).
-
-3\.  \*\*Price-Rating Independence:\*\* There is \*\*no strong correlation\*\* between the price of a product and its rating. Expensive items do not guarantee higher customer satisfaction.
-
-
-
-\## 📈 Visualizations
-
-
-
-\### 1. Market Composition
-
-\*Electronics dominate the dataset, followed closely by Home \& Kitchen.\*
-
-!\[Top Categories](images/1\_top\_categories.png)
-
-
-
-\### 2. Pricing Strategy
-
-\*The majority of products are discounted between 30% and 60%.\*
-
-!\[Discount Distribution](images/2\_discount\_distribution.png)
-
-
-
-\### 3. Price vs. Quality Perception
-
-\*Scatter plot analysis shows that customer satisfaction (rating) remains stable regardless of price point.\*
-
-!\[Price vs Rating](images/3\_price\_vs\_rating.png)
-
-
-
-\## 🛠️ Methodology
-
-\* \*\*Data Cleaning:\*\* Handled currency symbols (`₹`) and missing values.
-
-\* \*\*Feature Engineering:\*\* Extracted categories and converted numeric types.
-
-\* \*\*Analysis:\*\* Univariate and Bivariate analysis using Pandas \& Seaborn.
-
-
-
-\## 🚀 How to Run
-
-1\. Clone the repository.
-
-2\. Install dependencies:
-
-&nbsp;  ```bash
-
-&nbsp;  pip install -r requirements.txt
-
+1.  Clone the repository.
+2.  Install requirements:
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  Run the script:
+    ```bash
+    python notebooks/analysis.py
+    ```
